@@ -1,0 +1,51 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "API for UGEL Talara system",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "build": "babel src --out-dir dist",
+    "test": "node test_suite.js",
+    "public": "node start-with-ngrok.js",
+    "tunnel": "ngrok http 9000",
+    "deploy:render": "echo 'Desplegar en Render: https://render.com'",
+    "deploy:railway": "railway up"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranklynRT/ProyectoSeminarioG4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FranklynRT/ProyectoSeminarioG4/issues"
+  },
+  "homepage": "https://github.com/FranklynRT/ProyectoSeminarioG4#readme",
+  "dependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "exceljs": "^4.4.0",
+    "express": "^5.1.0",
+    "express-fileupload": "^1.5.2",
+    "jsonwebtoken": "^9.0.2",
+    "mssql": "^12.0.0",
+    "multer": "^2.0.2",
+    "mysql2": "^3.15.3",
+    "nodemailer": "^7.0.9",
+    "nodemon": "^3.1.10",
+    "openai": "^6.6.0",
+    "pdf-parse": "^2.4.5",
+    "pdfkit": "^0.17.2",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.33.0",
+    "xlsx": "^0.18.5"
+  }
+}

@@ -1,0 +1,36 @@
+# Dockerfile para desarrollo de la API
+FROM node:18-alpine
+
+# Instalar dependencias del sistema necesarias
+RUN apk add --no-cache \
+    python3 \
+    make \
+    g++ \
+    cairo-dev \
+    jpeg-dev \
+    pango-dev \
+    giflib-dev \
+    pixman-dev \
+    wget
+
+# Establecer directorio de trabajo
+WORKDIR /app
+
+# Copiar archivos de dependencias
+COPY package*.json ./
+
+# Instalar todas las dependencias (incluyendo devDependencies)
+RUN npm install
+
+# Copiar código fuente
+COPY . .
+
+# Crear directorio para uploads si no existe
+RUN mkdir -p uploads/anexos uploads/profiles uploads/curriculum
+
+# Exponer puerto
+EXPOSE 9000
+
+# Comando para desarrollo con nodemon (hot reload)
+CMD ["npm", "run", "dev"]
+
